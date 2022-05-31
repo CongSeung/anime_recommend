@@ -21,6 +21,14 @@ def run_search():
     favorite_top = df['favorites'].sort_values(ascending = False).index
     st.dataframe(df.loc[favorite_top].head(50))
 
+    title_input = st.sidebar.text_input('원하는 제목 찾기')
+
+    contain_title = df['title'].str.lower().str.contains(title_input)
+    
+    st.subheader('애니메이션 제목 찾기')
+
+    st.dataframe(df.loc[contain_title])
+
     st.subheader('원하는 컬럼 정렬해서 보기')
     
 
@@ -38,4 +46,7 @@ def run_search():
     if st.sidebar.button('정렬한 후 확인하기'):
         favorite_top = df[sort_sel].sort_values(ascending = my_sel_2).index
         st.dataframe(df.loc[favorite_top].head(100))
+
+
+
         

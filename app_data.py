@@ -20,13 +20,13 @@ def run_data() :
 
     
     
-    st.subheader('카테고리컬 데이터 컬럼 비주얼라이징')
-# ['airing','type','status','licensors','producers','studios']
-    chosen_col = st.selectbox('컬럼 선택', df.columns.to_list())
+#     st.subheader('카테고리컬 데이터 컬럼 비주얼라이징')
+# # ['airing','type','status','licensors','producers','studios']
+#     chosen_col = st.selectbox('컬럼 선택', df.columns.to_list())
 
-    my_order = df[chosen_col].value_counts().index
+#     my_order = df[chosen_col].value_counts().index
 
-    if st.button('차트 확인하기'):
-        fig1 = plt.figure()
-        sns.countplot(data= df, x = df[chosen_col] , order = my_order)
-        st.pyplot(fig1)
+#     if st.button('차트 확인하기'):
+#         fig1 = plt.figure()
+#         sns.countplot(data= df, x = df[chosen_col] , order = my_order)
+#         st.pyplot(fig1)
