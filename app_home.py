@@ -12,16 +12,16 @@ def run_home():
     st.subheader('재밌어요!')
 
     ### gif 파일 넣기
-    # """### gif from local file"""
-    # file_ = open("data/streamlit-app-2022-05-27-17-05-37 (3).gif", "rb")
-    # contents = file_.read()
-    # data_url = base64.b64encode(contents).decode("utf-8")
-    # file_.close()
+    """### gif from local file"""
+    file_ = open("data/streamlit-app-2022-05-27-17-05-37 (3).gif", "rb")
+    contents = file_.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+    file_.close()
 
-    # st.markdown(
-    #     f'<img src="data:image/gif;base64,{data_url}" alt="Explanation video gif">',
-    #     unsafe_allow_html=True,
-    # )
+    st.markdown(
+        f'<img src="data:image/gif;base64,{data_url}" alt="Explanation video gif">',
+        unsafe_allow_html=True,
+    )
 
 
     #### 영상넣기
