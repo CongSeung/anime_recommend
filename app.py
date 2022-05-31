@@ -5,7 +5,7 @@ import random
 import seaborn as sns
 import streamlit as st
 
-from app_data import run_data
+from app_describe import run_data
 from app_home import run_home
 from app_recommend import run_recomm
 from app_search import run_search
@@ -14,7 +14,7 @@ def main():
     
     st.title("Recommand Animation")
 
-    menu = ['Home', 'Search' ,'Data', 'Recommend']
+    menu = ['Home', 'Search' ,'Describe', 'Recommend']
 
     choice = st.sidebar.selectbox('메 뉴 선 택', menu)
 

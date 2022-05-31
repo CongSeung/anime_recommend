@@ -11,27 +11,21 @@ df = df.drop(i)
 
 
 def run_search():
-    st.subheader('제일 평점이 높은 애니메이션 TOP50')
-
-    # TOP 50
-    rank_top = df['rank'].sort_values().index
-    st.dataframe(df.loc[rank_top].head(50))
-
-    st.subheader('제일 인기가 많은 애니메이션 TOP50')
-    favorite_top = df['favorites'].sort_values(ascending = False).index
-    st.dataframe(df.loc[favorite_top].head(50))
-
+   
+    ## 
     title_input = st.sidebar.text_input('원하는 제목 찾기')
 
     contain_title = df['title'].str.lower().str.contains(title_input)
     
     st.subheader('애니메이션 제목 찾기')
+    if st.button('제목 검색하기'):
 
-    st.dataframe(df.loc[contain_title])
+        st.dataframe(df.loc[contain_title])
 
+
+    ##
     st.subheader('원하는 컬럼 정렬해서 보기')
     
-
     sort_sel = st.sidebar.selectbox('원하는 컬럼 선택', df.columns.to_list())
 
     my_order_1 = ['올림차순', '내림차순']   
