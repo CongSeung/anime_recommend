@@ -18,7 +18,7 @@ def run_search():
     contain_title = df['title'].str.lower().str.contains(title_input)
     
     st.subheader('애니메이션 제목 찾기')
-    if st.button('제목 검색하기'):
+    if st.sidebar.button('제목 검색하기'):
 
         st.dataframe(df.loc[contain_title])
 
