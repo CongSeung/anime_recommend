@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt 
 import seaborn as sns
 import streamlit as st
-from st_aggrid import AgGrid
 
 df = pd.read_csv('data/anime_list.csv')
 df.drop('background', axis = 1, inplace= True)
