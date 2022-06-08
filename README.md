@@ -3,7 +3,31 @@
 이미 본 애니메이션의 제목을 입력하여 다른 애니메이션을 추천받는 웹 대시보드입니다.
 
 Dataset : https://www.kaggle.com/datasets/snehaanbhawal/anime-list-for-recommendation-system-june-2021    
-Deployment : http://15.164.213.131:8502/
+Deployment : http://15.164.213.131:8502/ - free tier 를 사용하여 메모리 부족으로 로컬로 작업
+
+# columns
+mal_id : 고유한 MyAnimeList ID
+title : 애니메이션 제목
+synopsis : 애니메이션의 개요
+aired : 애니메이션 방영 기간
+airing : 애니메이션 방영이 종료된 경우 0, 진행 중인 경우
+duration : 각 에피소드의 방송 시간
+episodes : 에피소드 수. Null 값은 -1 로 대체
+type : 릴리스 유형
+favorites : 애니메이션을 좋아하는 사람들의 수
+members : 애니메이션의 구성원 수
+rank : 애니메이션의 순위 Null 값은 -1 로 대체
+popularity : 애니메이션의 순위 Null 값이 -1로 대체
+score : 애니메이션의 평균 점수
+scored_by : 점수를 준 사람의 수
+rating : 애니메이션을 관람할 수 있는 연령대
+premiered : 방영 연도와 시즌
+genres : 장르
+related : 문자열 형식의 관련 애니메이션
+status : 방영현황
+licensors : 쉼표로 구분된 문자열의 라이센스 사용 허가자 이름
+producers : 쉼표로 구분된 문자열의 생산자, 생산 회사 이름
+studios : 쉼표로 구분된 문자열의 제작 스튜디오 이름
 
 ------------------
 
