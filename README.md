@@ -2,6 +2,9 @@
 
 이미 본 애니메이션의 제목을 입력하여 다른 애니메이션을 추천받는 웹 대시보드입니다.
 
+Dataser : https://www.kaggle.com/datasets/snehaanbhawal/anime-list-for-recommendation-system-june-2021
+Deployment : http://15.164.213.131:8502/
+
 ------------------
 
 # describe
