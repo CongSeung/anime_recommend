@@ -22,7 +22,7 @@
 ![image](https://user-images.githubusercontent.com/105832386/172545012-b222b417-9668-48f1-adc8-af329d6bcc60.png)
 
 
-정렬 방식을 선택한 다음   
+정렬 방식을 선택한 다음에   
 
 ![image](https://user-images.githubusercontent.com/105832386/172545066-dc75e55c-3f42-4161-9b24-e3166a3fd017.png)
 
