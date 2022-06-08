@@ -7,7 +7,6 @@ import streamlit as st
 
 from app_describe import run_data
 from app_home import run_home
-from app_recommend import run_recomm
 from app_search import run_search
 
 
@@ -16,7 +15,7 @@ def main():
     
     st.title("Recommend Animation")
 
-    menu = ['Home', 'Describe','Search','Recommend']
+    menu = ['Home', 'Describe','Search']
 
     choice = st.sidebar.selectbox('메 뉴 선 택', menu)
 
@@ -26,12 +25,7 @@ def main():
         run_data()
     elif choice == menu[2]:
         run_search()
-    elif choice == menu[3]:
-        run_recomm()
     
-    
-
-
 
 if __name__ == '__main__':
     main()
