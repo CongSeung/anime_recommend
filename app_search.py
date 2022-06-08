@@ -15,6 +15,7 @@ df = df.drop(i)
 
 
 def run_search():
+
     # 정렬의 기준이될 컬럼 선택하기
     st.sidebar.text('------------')
     sort_sel = st.sidebar.selectbox('정렬할 기준 선택', df.columns.to_list())
@@ -48,40 +49,40 @@ def run_search():
         st.subheader('검색 결과')
         st.dataframe(df.loc[contain_title].sort_values(by= sort_sel ,ascending=my_sel_2))
 
-    # 애니메이션 추천하기
-    st.subheader('애니메이션 추천해드립니다!')
+    # 애니메이션 추천하기 무거워서 따로 뺌
+    # st.subheader('애니메이션 추천해드립니다!')
 
-    anime = pd.read_csv('data/anime_list.csv')
-    anime_cleaned = anime.copy().drop(columns = ['duration','airing','aired','background','premiered','licensors','producers','status','type'], axis = 1)
-    tfidfvec = TfidfVectorizer(stop_words = 'english')
-    anime_cleaned['synopsis']=anime_cleaned['synopsis'].fillna('')
-    tfidf_matrix = tfidfvec.fit_transform(anime_cleaned['synopsis'])
+    # anime = pd.read_csv('data/anime_list.csv')
+    # anime_cleaned = anime.copy().drop(columns = ['duration','airing','aired','background','premiered','licensors','producers','status','type'], axis = 1)
+    # tfidfvec = TfidfVectorizer(stop_words = 'english')
+    # anime_cleaned['synopsis']=anime_cleaned['synopsis'].fillna('')
+    # tfidf_matrix = tfidfvec.fit_transform(anime_cleaned['synopsis'])
     
-    cosine_sim=linear_kernel(tfidf_matrix,tfidf_matrix)
+    # cosine_sim=linear_kernel(tfidf_matrix,tfidf_matrix)
 
-    indices = pd.Series(anime_cleaned.index,index = anime_cleaned['title']).drop_duplicates()
+    # indices = pd.Series(anime_cleaned.index,index = anime_cleaned['title']).drop_duplicates()
 
-    input_anime = st.sidebar.text_input('추천이요! 시청한 만화 제목 입력!')
+    # input_anime = st.sidebar.text_input('추천이요! 시청한 만화 제목 입력!')
 
-    def recommender(title, cosine_sim = cosine_sim):
+    # def recommender(title, cosine_sim = cosine_sim):
 
-        #get the index based on title
-        index = indices[title]
+    #     #get the index based on title
+    #     index = indices[title]
         
-        #get cosine similarity for title
-        cosine_sim_for_title = list(enumerate(cosine_sim[index]))
+    #     #get cosine similarity for title
+    #     cosine_sim_for_title = list(enumerate(cosine_sim[index]))
 
-        #sort by cosine similarity
-        sorted_by_second = sorted(cosine_sim_for_title, key = lambda x:x[1])
-        chosen = sorted_by_second[1:6]
+    #     #sort by cosine similarity
+    #     sorted_by_second = sorted(cosine_sim_for_title, key = lambda x:x[1])
+    #     chosen = sorted_by_second[1:6]
 
-        anime_indices = [i[0] for i in chosen]
+    #     anime_indices = [i[0] for i in chosen]
 
-        return anime_cleaned.iloc[anime_indices]   
+    #     return anime_cleaned.iloc[anime_indices]   
 
-    if st.sidebar.button('추천받기'):
+    # if st.sidebar.button('추천받기'):
     
-        st.dataframe(recommender(input_anime))
+    #     st.dataframe(recommender(input_anime))
 
 
         
