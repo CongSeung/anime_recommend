@@ -23,9 +23,3 @@ def run_home():
     #     unsafe_allow_html=True,
     # )
 
-
-    #### 영상넣기
-    # st.text('영상 예시')
-    # video_file = open('data/streamlit-app-2022-05-27-15-05-59.webm', 'rb')
-    # st.video(video_file)
-        

@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt 
 import seaborn as sns
 import streamlit as st
+from st_aggrid import AgGrid
 
 df = pd.read_csv('data/anime_list.csv')
 df.drop('background', axis = 1, inplace= True)
@@ -29,16 +30,3 @@ def run_data() :
     st.subheader('제일 인기가 많은 애니메이션 TOP50')
     favorite_top = df['favorites'].sort_values(ascending = False).index
     st.dataframe(df.loc[favorite_top].head(50))
-
-    
-    
-#     st.subheader('카테고리컬 데이터 컬럼 비주얼라이징')
-# # ['airing','type','status','licensors','producers','studios']
-#     chosen_col = st.selectbox('컬럼 선택', df.columns.to_list())
-
-#     my_order = df[chosen_col].value_counts().index
-
-#     if st.button('차트 확인하기'):
-#         fig1 = plt.figure()
-#         sns.countplot(data= df, x = df[chosen_col] , order = my_order)
-#         st.pyplot(fig1)
